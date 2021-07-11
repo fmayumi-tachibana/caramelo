@@ -1,5 +1,7 @@
 import 'package:caramelo/resources/theme/config.dart';
-import 'package:caramelo/resources/theme/custom_theme.dart';
+import 'package:caramelo/resources/theme/dark_theme/dark_theme.dart';
+import 'package:caramelo/resources/theme/light_theme/light_theme.dart';
+import 'package:caramelo/resources/theme/mechanisms/theme_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:caramelo/modules/home/home_scene.dart';
 
@@ -17,7 +19,6 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     currentTheme.addListener(() {
-      //2
       setState(() {});
     });
   }
@@ -25,8 +26,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) => MaterialApp(
       title: 'Caramelo',
-      theme: CustomTheme.lightTheme,
-      darkTheme: CustomTheme.darkTheme,
+      theme: ThemeManager.createTheme(LightTheme()),
+      darkTheme: ThemeManager.createTheme(DarkTheme()),
       themeMode: currentTheme.currentTheme,
       home: HomeScene(),
     );
