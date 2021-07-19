@@ -19,6 +19,6 @@ abstract class ThemeManager {
       ),
       buttonColor: theme.colors.buttonColor,
     ),
-      iconTheme: theme.colors.iconTheme,
+    iconTheme: theme.colors.iconTheme,
   );
 }
