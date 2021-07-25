@@ -4,15 +4,15 @@ abstract class ITextTheme {
   ITextTheme(this.primaryColor);
 
   final Color primaryColor;
-  TextTheme data;
-  TextStyle headline1;
-  TextStyle headline3;
-  TextStyle headline4;
-  TextStyle headline5;
-  TextStyle headline6;
-  TextStyle subtitle1;
-  TextStyle subtitle2;
-  TextStyle bodyText1;
-  TextStyle bodyText2;
-  String fontFamily;
+  late TextTheme data;
+  late TextStyle headline1;
+  late TextStyle headline3;
+  late TextStyle headline4;
+  late TextStyle headline5;
+  late TextStyle headline6;
+  late TextStyle subtitle1;
+  late TextStyle subtitle2;
+  late TextStyle bodyText1;
+  late TextStyle bodyText2;
+  late String fontFamily;
 }

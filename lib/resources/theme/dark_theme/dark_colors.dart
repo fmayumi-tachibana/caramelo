@@ -8,11 +8,11 @@ class DarkColors implements IColors {
     appBarColor = colors.darkGrey;
     scaffoldBackgroundColor = colors.black;
     tabBarColor = colors.darkGrey;
-    colorScheme = const ColorScheme.light().copyWith(
+    colorScheme = const ColorScheme.dark().copyWith(
         onPrimary: colors.darkGrey,
         onSecondary: colors.darkGrey,
         onSurface: colors.darkGrey);
-    buttonColor = colors.lightCaramel;
+    buttonColor = colors.caramel;
     brightness = Brightness.dark;
     iconTheme = IconThemeData(color: colors.white);
   }
@@ -21,29 +21,29 @@ class DarkColors implements IColors {
   final CustomColors colors = CustomColors();
 
   @override
-  ColorScheme colorScheme;
+  late ColorScheme colorScheme;
 
   @override
-  Color appBarColor;
+  late Color appBarColor;
 
   @override
-  Color scaffoldBackgroundColor;
+  late Color scaffoldBackgroundColor;
 
   @override
-  Color tabBarColor;
+  late Color tabBarColor;
 
   @override
-  Brightness brightness;
+  late Brightness brightness;
 
   @override
-  Color buttonColor;
+  late Color buttonColor;
 
   @override
-  Color tabBarNormalColor;
+  late Color tabBarNormalColor;
 
   @override
-  Color tabBarSelectedColor;
+  late Color tabBarSelectedColor;
 
   @override
-  IconThemeData iconTheme;
+  late IconThemeData iconTheme;
 }

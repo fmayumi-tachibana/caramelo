@@ -9,10 +9,10 @@ class LightColors implements IColors {
     scaffoldBackgroundColor = colors.white;
     tabBarColor = colors.white;
     colorScheme = const ColorScheme.light().copyWith(
-        onPrimary: colors.white,
-        onSecondary: colors.white,
-        onSurface: colors.white);
-    buttonColor = colors.lightCaramel;
+        onPrimary: colors.darkGrey,
+        onSecondary: colors.darkGrey,
+        onSurface: colors.darkGrey);
+    buttonColor = colors.caramel;
     brightness = Brightness.light;
     iconTheme = IconThemeData(color: colors.black);
   }
@@ -21,29 +21,29 @@ class LightColors implements IColors {
   final CustomColors colors = CustomColors();
 
   @override
-  ColorScheme colorScheme;
+  late ColorScheme colorScheme;
 
   @override
-  Color appBarColor;
+  late Color appBarColor;
 
   @override
-  Color scaffoldBackgroundColor;
+  late Color scaffoldBackgroundColor;
 
   @override
-  Color tabBarColor;
+  late Color tabBarColor;
 
   @override
-  Brightness brightness;
+  late Brightness brightness;
 
   @override
-  Color buttonColor;
+  late Color buttonColor;
 
   @override
-  Color tabBarNormalColor;
+  late Color tabBarNormalColor;
 
   @override
-  Color tabBarSelectedColor;
+  late Color tabBarSelectedColor;
 
   @override
-  IconThemeData iconTheme;
+  late IconThemeData iconTheme;
 }

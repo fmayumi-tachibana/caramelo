@@ -10,7 +10,7 @@ class DarkTheme extends ITheme {
   }
 
   @override
-  ITextTheme textTheme;
+  late ITextTheme textTheme;
 
   @override
   IColors get colors => DarkColors();

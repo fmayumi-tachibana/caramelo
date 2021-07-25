@@ -3,18 +3,18 @@ import 'package:caramelo/resources/theme/dark_theme/dark_theme.dart';
 import 'package:caramelo/resources/theme/light_theme/light_theme.dart';
 import 'package:caramelo/resources/theme/mechanisms/theme_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:caramelo/modules/home/home_scene.dart';
+import 'package:caramelo/modules/home/home_view.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(CarameloApp());
 }
 
-class MyApp extends StatefulWidget {
+class CarameloApp extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _CarameloAppState createState() => _CarameloAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _CarameloAppState extends State<CarameloApp> {
   @override
   void initState() {
     super.initState();
@@ -25,10 +25,11 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-      title: 'Caramelo',
-      theme: ThemeManager.createTheme(LightTheme()),
-      darkTheme: ThemeManager.createTheme(DarkTheme()),
-      themeMode: currentTheme.currentTheme,
-      home: HomeScene(),
-    );
+    debugShowCheckedModeBanner: false,
+    title: 'Caramelo',
+    theme: ThemeManager.createTheme(LightTheme()),
+    darkTheme: ThemeManager.createTheme(DarkTheme()),
+    themeMode: currentTheme.currentTheme,
+    home: HomeView(),
+  );
 }

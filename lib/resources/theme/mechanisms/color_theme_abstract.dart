@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 abstract class IColors {
   CustomColors get colors;
-  Color scaffoldBackgroundColor;
-  Color appBarColor;
-  Color tabBarColor;
-  Color tabBarSelectedColor;
-  Color tabBarNormalColor;
-  Brightness brightness;
-  Color buttonColor;
-  IconThemeData iconTheme;
+  late Color scaffoldBackgroundColor;
+  late Color appBarColor;
+  late Color tabBarColor;
+  late Color tabBarSelectedColor;
+  late Color tabBarNormalColor;
+  late Brightness brightness;
+  late Color buttonColor;
+  late IconThemeData iconTheme;
 
-  ColorScheme colorScheme;
+  late ColorScheme colorScheme;
 }

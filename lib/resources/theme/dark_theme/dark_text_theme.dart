@@ -11,38 +11,38 @@ class DarkTextTheme implements ITextTheme {
   }
 
   @override
-  TextTheme data;
+  late TextTheme data;
 
   @override
-  TextStyle bodyText1;
+  late TextStyle bodyText1;
 
   @override
-  TextStyle bodyText2;
+  late TextStyle bodyText2;
 
   @override
-  TextStyle headline1;
+  late TextStyle headline1;
 
   @override
-  TextStyle headline3;
+  late TextStyle headline3;
 
   @override
-  TextStyle headline4;
+  late TextStyle headline4;
 
   @override
-  TextStyle headline5;
+  late TextStyle headline5;
 
   @override
-  TextStyle headline6;
+  late TextStyle headline6;
 
   @override
-  TextStyle subtitle1;
+  late TextStyle subtitle1;
 
   @override
-  TextStyle subtitle2;
+  late TextStyle subtitle2;
 
   @override
   final Color primaryColor;
 
   @override
-  String fontFamily;
+  late String fontFamily;
 }
