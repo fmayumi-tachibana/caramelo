@@ -1,6 +1,6 @@
 # caramelo
 
-A new Flutter application.
+App de saúde animal
 
 ## Getting Started
 
