@@ -5,7 +5,7 @@ class DarkTextTheme implements ITextTheme {
   DarkTextTheme(this.primaryColor) {
     data = const TextTheme(
       headline6: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
-      subtitle1: TextStyle(fontSize: 16),
+      subtitle1: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
     ).apply(bodyColor: primaryColor);
     fontFamily = 'Montserrat';
   }

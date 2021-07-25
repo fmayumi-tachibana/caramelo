@@ -3,7 +3,7 @@ import 'package:caramelo/resources/theme/dark_theme/dark_theme.dart';
 import 'package:caramelo/resources/theme/light_theme/light_theme.dart';
 import 'package:caramelo/resources/theme/mechanisms/theme_manager.dart';
 import 'package:flutter/material.dart';
-import 'package:caramelo/modules/home/home_view.dart';
+import 'package:caramelo/modules/home/scenes/home_view.dart';
 
 void main() {
   runApp(CarameloApp());
