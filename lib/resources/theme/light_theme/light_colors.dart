@@ -5,16 +5,16 @@ import 'package:flutter/material.dart';
 class LightColors implements IColors {
 
   LightColors() {
-    appBarColor = colors.white;
-    scaffoldBackgroundColor = colors.white;
-    tabBarColor = colors.white;
+    appBarColor = CustomColors.white;
+    scaffoldBackgroundColor = CustomColors.white;
+    tabBarColor = CustomColors.white;
     colorScheme = const ColorScheme.light().copyWith(
-        onPrimary: colors.darkGrey,
-        onSecondary: colors.darkGrey,
-        onSurface: colors.darkGrey);
-    buttonColor = colors.caramel;
+        onPrimary: CustomColors.darkGrey,
+        onSecondary: CustomColors.darkGrey,
+        onSurface: CustomColors.darkGrey);
+    buttonColor = CustomColors.caramel;
     brightness = Brightness.light;
-    iconTheme = IconThemeData(color: colors.black);
+    iconTheme = IconThemeData(color: CustomColors.caramel);
   }
 
   @override

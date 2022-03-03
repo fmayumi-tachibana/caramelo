@@ -30,6 +30,6 @@ class _CarameloAppState extends State<CarameloApp> {
     theme: ThemeManager.createTheme(LightTheme()),
     darkTheme: ThemeManager.createTheme(DarkTheme()),
     themeMode: currentTheme.currentTheme,
-    home: HomeView(),
+    home: const HomeView(),
   );
 }
