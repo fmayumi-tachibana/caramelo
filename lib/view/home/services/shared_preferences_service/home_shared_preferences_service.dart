@@ -1,5 +1,5 @@
 import 'package:caramelo/view/home/support/home_shared_preferences_support.dart';
-import 'package:caramelo/services/localstorage_service.dart';
+import 'package:caramelo/core/services/local_storage_service.dart';
 
 class HomeKey {
   static String isDarkTheme = 'is_dark_theme_key';
