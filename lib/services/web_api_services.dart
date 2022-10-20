@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:caramelo/models/exceptions.dart';
+import 'package:caramelo/core/models/exceptions.dart';
 import 'package:http/http.dart' as http;
 
 abstract class WebApiServices {
@@ -20,11 +20,11 @@ abstract class WebApiServices {
         throw <T>[];
       }
     } on SocketException catch (e) {
-      throw NoInternetException('No Internet');
-    } on HttpException {
-      throw NoServiceFoundException('No Service Found');
-    } on FormatException {
-      throw InvalidFormatException('Invalid Data Format');
+      throw NoInternetException(e.message);
+    } on HttpException catch (e) {
+      throw NoServiceFoundException(e.message);
+    } on FormatException catch (e) {
+      throw InvalidFormatException(e.message);
     } catch (e) {
       throw UnknownException(e.toString());
     }
