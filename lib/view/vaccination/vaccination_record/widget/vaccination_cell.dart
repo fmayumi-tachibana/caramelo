@@ -1,8 +1,9 @@
 import 'package:caramelo/core/theme/colors.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class VaccinationCell extends StatelessWidget {
-  VaccinationCell({
+  const VaccinationCell({
     Key? key,
     required this.name,
     required this.date,
@@ -14,8 +15,6 @@ class VaccinationCell extends StatelessWidget {
   final String date;
   final String lotNumber;
   final String doctorName;
-
-  final CustomColors colors = CustomColors();
 
   @override
   Widget build(BuildContext context) => Container(
@@ -29,10 +28,10 @@ class VaccinationCell extends StatelessWidget {
     ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: <Widget>[
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+          children: <Widget>[
             Text(
               name,
               style: Theme.of(context).textTheme.headline6,
@@ -60,4 +59,13 @@ class VaccinationCell extends StatelessWidget {
       ],
     ),
   );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('name', name));
+    properties.add(StringProperty('date', date));
+    properties.add(StringProperty('lotNumber', lotNumber));
+    properties.add(StringProperty('doctorName', doctorName));
+  }
 }

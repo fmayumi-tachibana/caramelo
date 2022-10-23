@@ -1,21 +1,32 @@
+import 'dart:async';
+
 import 'package:caramelo/view/home/worker/home_worker.dart';
 import 'package:flutter/material.dart';
 
 class CustomTheme with ChangeNotifier {
-  bool _isDarkTheme = false;
+  ThemeMode _theme = ThemeMode.light;
 
   ThemeMode get currentTheme {
-    getTheme();
-    return _isDarkTheme ? ThemeMode.dark : ThemeMode.light;
+    unawaited(getTheme());
+    return _theme;
   }
 
-  void getTheme() async {
-    _isDarkTheme = await HomeWorker().getTheme();
+  Future<void> getTheme() async {
+    _theme = await HomeWorker().getTheme();
   }
 
-  void toggleTheme() {
-    _isDarkTheme = !_isDarkTheme;
-    HomeWorker().setTheme(_isDarkTheme);
+  Future<void> toggleTheme() async {
+    switch (_theme) {
+      case ThemeMode.light:
+        _theme = ThemeMode.dark;
+        break;
+      case ThemeMode.dark:
+        _theme = ThemeMode.light;
+        break;
+      case ThemeMode.system:
+        break;
+    }
+    await HomeWorker().setTheme(_theme);
     notifyListeners();
   }
 }

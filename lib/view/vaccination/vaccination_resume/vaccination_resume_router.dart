@@ -1,5 +1,5 @@
-import 'package:caramelo/view/vaccination/vaccination_record.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 abstract class VaccinationResumeRouterInterface {
   void routeToVaccinationRecord(BuildContext context);
@@ -8,9 +8,6 @@ abstract class VaccinationResumeRouterInterface {
 class VaccinationResumeRouter implements VaccinationResumeRouterInterface {
   @override
   void routeToVaccinationRecord(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Vaccination.routeToVaccinationRecordView()),
-    );
+    Modular.to.navigate('/vaccinationRecord');
   }
 }

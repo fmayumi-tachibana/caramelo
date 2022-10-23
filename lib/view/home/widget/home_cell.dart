@@ -1,17 +1,16 @@
 import 'package:caramelo/core/theme/colors.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomeCell extends StatelessWidget {
-  HomeCell({
+  const HomeCell({
     Key? key,
     required this.categoryName,
-    required this.categoryImage
+    required this.categoryImage,
   }) : super(key: key);
 
   final String categoryName;
   final String categoryImage;
-
-  final CustomColors colors = CustomColors();
 
   @override
   Widget build(BuildContext context) => Container(
@@ -49,4 +48,11 @@ class HomeCell extends StatelessWidget {
       ],
     ),
   );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('categoryName', categoryName));
+    properties.add(StringProperty('categoryImage', categoryImage));
+  }
 }

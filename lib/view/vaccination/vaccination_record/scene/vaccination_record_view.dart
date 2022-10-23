@@ -9,11 +9,10 @@ class VaccinationRecordView extends StatefulWidget {
   const VaccinationRecordView({Key? key}) : super(key: key);
 
   @override
-  _VaccinationRecordViewState createState() => _VaccinationRecordViewState();
+  State<VaccinationRecordView> createState() => _VaccinationRecordViewState();
 }
 
 class _VaccinationRecordViewState extends State<VaccinationRecordView> implements VaccinationRecordViewInterface {
-  final CustomColors colors = CustomColors();
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
@@ -36,33 +35,33 @@ class _VaccinationRecordViewState extends State<VaccinationRecordView> implement
             Icons.add,
             color: Theme.of(context).iconTheme.color,
           ),
-          onPressed: () => null,
+          onPressed: () => {},
         ),
       ],
     ),
     body: Column(
-      children: <Widget>[
+      children: const <Widget>[
         VaccinationCell(
           name: 'V10',
           date: '11/09/2021',
           lotNumber: 'AB1234',
           doctorName: 'Dra. Alice',
         ),
-        const SizedBox(height: 15),
+        SizedBox(height: 15),
         VaccinationCell(
           name: 'Leishmaniose',
           date: '11/09/2021',
           lotNumber: 'AB1234',
           doctorName: 'Dra. Alice',
         ),
-        const SizedBox(height: 15),
+        SizedBox(height: 15),
         VaccinationCell(
           name: 'Antirrábica',
           date: '11/09/2021',
           lotNumber: 'AB1234',
           doctorName: 'Dra. Alice',
         ),
-        const SizedBox(height: 15),
+        SizedBox(height: 15),
         VaccinationCell(
           name: 'Gripe canina',
           date: '11/09/2021',

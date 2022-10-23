@@ -7,8 +7,8 @@ part 'home_state.dart';
 
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc() : super(HomeInitial()) {
-    on<SetTheme>((event, emit) async {
-      currentTheme.toggleTheme();
+    on<SetTheme>((SetTheme event, Emitter<HomeState> emit) async {
+      await currentTheme.toggleTheme();
     });
   }
 }

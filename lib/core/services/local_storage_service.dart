@@ -4,10 +4,10 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 abstract class LocalStorageService {
 
-  static const _androidOptions =
+  static const AndroidOptions _androidOptions =
     AndroidOptions(encryptedSharedPreferences: true);
 
-  static const _iosOptions =
+  static const IOSOptions _iosOptions =
     IOSOptions(accessibility: KeychainAccessibility.first_unlock);
 
   static const FlutterSecureStorage _secureStorage =
@@ -30,7 +30,7 @@ abstract class LocalStorageService {
     } else if (T == num) {
       value = _secureStorage.read(key: key) as T?;
     } else if (T == DateTime) {
-      final String date = _secureStorage.read(key: key).toString() ?? '';
+      String date = _secureStorage.read(key: key).toString();
       value = DateTime.tryParse(date) as T?;
     }
     return value ?? defaultValue;

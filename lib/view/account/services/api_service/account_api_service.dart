@@ -9,9 +9,9 @@ class AccountApiService implements AccountSupport {
   @override
   Future<User> getUser() async {
     User user = User();
-    final http.Response response = await http.get(url);
+    http.Response response = await http.get(url);
     if (200 == response.statusCode) {
-      final parsed = json.decode(response.body).cast<Map<String, dynamic>>();
+      var parsed = json.decode(response.body).cast<Map<String, dynamic>>();
       user = parsed.map<User>((json) => User.fromJson(json)).toList();
       return user;
     }

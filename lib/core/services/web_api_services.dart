@@ -5,16 +5,19 @@ import 'package:caramelo/core/models/exceptions.dart';
 import 'package:http/http.dart' as http;
 
 abstract class WebApiServices {
-  late final Function toTypeObject;
   WebApiServices({required this.toTypeObject});
+
+  late final Function toTypeObject;
   static Uri url = Uri.parse('https://example.com/whatsit/create');
 
   Future<T> request<T>() async {
     try {
-      final response = await http.get(url);
+      http.Response response = await http.get(url);
       if (200 == response.statusCode) {
-        final json = jsonDecode(response.body).cast<Map<String, dynamic>>();
-        final T object = toTypeObject(json);
+        Map<String, dynamic> json =
+            jsonDecode(response.body).cast<Map<String, dynamic>>();
+
+        T object = toTypeObject(json);
         return object;
       } else {
         throw <T>[];
@@ -31,8 +34,8 @@ abstract class WebApiServices {
   }
 
   static T parse<T>(String body) {
-    final parsed = json.decode(body).cast<Map<String, dynamic>>();
-    final T object = parsed.fromJson() as T;
+    dynamic parsed = json.decode(body).cast<Map<String, dynamic>>();
+    T object = parsed.fromJson() as T;
     return object;
   }
 }

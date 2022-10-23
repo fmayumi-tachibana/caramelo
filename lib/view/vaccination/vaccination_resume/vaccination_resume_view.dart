@@ -9,11 +9,10 @@ class VaccinationResumeView extends StatefulWidget {
   const VaccinationResumeView({Key? key}) : super(key: key);
 
   @override
-  _VaccinationResumeViewState createState() => _VaccinationResumeViewState();
+  State<VaccinationResumeView> createState() => _VaccinationResumeViewState();
 }
 
 class _VaccinationResumeViewState extends State<VaccinationResumeView> implements VaccinationResumeViewInterface {
-  final CustomColors colors = CustomColors();
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
@@ -56,7 +55,7 @@ class _VaccinationResumeViewState extends State<VaccinationResumeView> implement
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: const <Widget>[
                     Text(
                       'Giárdia',
                       style: TextStyle(
@@ -95,7 +94,7 @@ class _VaccinationResumeViewState extends State<VaccinationResumeView> implement
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: const <Widget>[
                     Text(
                       'Giárdia',
                       style: TextStyle(
@@ -134,7 +133,7 @@ class _VaccinationResumeViewState extends State<VaccinationResumeView> implement
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: const <Widget>[
                     Text(
                       'Giárdia',
                       style: TextStyle(
@@ -183,14 +182,14 @@ class _VaccinationResumeViewState extends State<VaccinationResumeView> implement
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: CustomColors.black,
                 ),
               ),
               subtitle: Text(
                 '3 anos',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.grey,
+                  color: CustomColors.grey,
                 ),
               ),
               trailing: Icon(

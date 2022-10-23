@@ -3,29 +3,90 @@ include: package:lints/recommended.yaml
 linter:
   rules:
     - always_declare_return_types
+    - always_put_control_body_on_new_line
+    - always_specify_types
+    - always_use_package_imports
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_double_and_int_checks
+    - avoid_equals_and_hash_code_on_mutable_classes
+    - avoid_field_initializers_in_const_classes
+    - avoid_function_literals_in_foreach_calls
+    - avoid_multiple_declarations_per_line
+    - avoid_positional_boolean_parameters
     - avoid_print
+    - avoid_redundant_argument_values
+    - avoid_returning_null
+    - avoid_returning_this
+    - avoid_setters_without_getters
+    - avoid_single_cascade_in_expression_statements
+    - avoid_type_to_string
     - avoid_unnecessary_containers
+    - avoid_unused_constructor_parameters
+    - avoid_void_async
     - avoid_web_libraries_in_flutter
+    - await_only_futures
+    - cancel_subscriptions
+    - close_sinks
+    - diagnostic_describe_all_properties
+    - directives_ordering
+    - discarded_futures
+    - eol_at_end_of_file
+    - lines_longer_than_80_chars
+    - literal_only_boolean_expressions
+    - no_adjacent_strings_in_list
     - no_logic_in_create_state
+    - parameter_assignments
     - prefer_const_constructors
     - prefer_const_constructors_in_immutables
     - prefer_const_declarations
     - prefer_const_literals_to_create_immutables
+    - prefer_expression_function_bodies
+    - prefer_final_in_for_each
+    - prefer_if_elements_to_conditional_expressions
+    - prefer_if_null_operators
+    - prefer_initializing_formals
+    - prefer_int_literals
+    - prefer_null_aware_method_calls
     - prefer_single_quotes
+    - require_trailing_commas
     - sized_box_for_whitespace
+    - sized_box_shrink_expand
     - sort_child_properties_last
+    - sort_constructors_first
+    - sort_pub_dependencies
     - unawaited_futures
+    - unnecessary_final
+    - unnecessary_getters_setters
+    - unnecessary_parenthesis
+    - unnecessary_statements
+    - unnecessary_to_list_in_spreads
     - unsafe_html
+    - use_colored_box
+    - use_decorated_box
     - use_full_hex_values_for_flutter_colors
+    - use_is_even_rather_than_modulo
     - use_key_in_widget_constructors
+    - use_named_constants
 
 analyzer:
   exclude:
     - lib/**.g.dart
     - lib/**.gr.dart
   errors:
-    unused_import: error
     always_declare_return_types: error
+    always_use_package_imports: error
     annotate_overrides: error
+    avoid_empty_else: error
+    avoid_multiple_declarations_per_line: error
+    avoid_positional_boolean_parameters: error
+    avoid_unused_constructor_parameters: error
+    avoid_void_async: error
+    cancel_subscriptions: error
+    close_sinks: error
     dead_code: error
+    eol_at_end_of_file: error
+    literal_only_boolean_expressions: error
+    parameter_assignments: error
+    require_trailing_commas: error
     sort_constructors_first: error
+    unused_import: error

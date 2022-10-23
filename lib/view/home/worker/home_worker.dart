@@ -1,9 +1,10 @@
 import 'package:caramelo/view/home/services/shared_preferences_service/home_shared_preferences_service.dart';
+import 'package:flutter/material.dart';
 
 class HomeWorker {
-  Future<bool> getTheme() async =>
-      HomeSharedPreferencesService().isDarkTheme;
+  Future<ThemeMode> getTheme() async =>
+      HomeSharedPreferencesService().theme;
 
-  void setTheme(bool isDarkTheme) async =>
-      HomeSharedPreferencesService().setIsDarkTheme(isDarkTheme);
+  Future<void> setTheme(ThemeMode theme) async =>
+      HomeSharedPreferencesService().setTheme(theme);
 }

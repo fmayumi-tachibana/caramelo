@@ -1,7 +1,8 @@
+import 'package:caramelo/core/theme/colors.dart';
 import 'package:caramelo/view/home/bloc/home_bloc.dart';
 import 'package:caramelo/view/home/scenes/home_router.dart';
-import 'package:caramelo/core/theme/colors.dart';
 import 'package:caramelo/view/home/widget/home_cell.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -12,13 +13,11 @@ class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
   @override
-  _HomeViewState createState() => _HomeViewState();
+  State<HomeView> createState() => _HomeViewState();
 }
 
 class _HomeViewState extends State<HomeView> implements HomeViewInterface {
   late HomeBloc homeBloc;
-
-  final CustomColors colors = CustomColors();
 
   @override
   void initState() {
@@ -43,15 +42,13 @@ class _HomeViewState extends State<HomeView> implements HomeViewInterface {
         elevation: 0,
         actions: <Widget>[
           BlocBuilder<HomeBloc, HomeState>(
-              builder: (context, state) {
-                return IconButton(
-                    icon: Icon(
-                      Icons.brightness_6_rounded,
-                      color: Theme.of(context).iconTheme.color,
-                    ),
-                    onPressed: () => context.read<HomeBloc>().add(SetTheme())
-                );
-              }
+            builder: (BuildContext context, HomeState state) => IconButton(
+              icon: Icon(
+                Icons.brightness_6_rounded,
+                color: Theme.of(context).iconTheme.color,
+              ),
+              onPressed: () => context.read<HomeBloc>().add(SetTheme()),
+            ),
           ),
         ],
       ),
@@ -108,15 +105,26 @@ class _HomeViewState extends State<HomeView> implements HomeViewInterface {
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: const <Widget>[
+                  children: <Widget>[
                     Text(
                       'Dica de hoje',
-                      style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: CustomColors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                       textAlign: TextAlign.start,
                     ),
                     Text(
-                      'Se pergunte: Se o meu cão pudesse escolher como seria o dia de hoje, o que iríamos fazer? Traga esses elementos para a rotina de vocês e você poderá ver a felicidade estampada na cara do seu cão!',
-                      style: TextStyle(fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
+                      'Se pergunte: Se o meu cão pudesse escolher como seria o '
+                          'dia de hoje, o que iríamos fazer? Traga esses '
+                          'elementos para a rotina de vocês e você poderá '
+                          'ver a felicidade estampada na cara do seu cão!',
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: CustomColors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                       textAlign: TextAlign.start,
                     ),
                   ],
@@ -128,4 +136,10 @@ class _HomeViewState extends State<HomeView> implements HomeViewInterface {
       ),
     ),
   );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty<HomeBloc>('homeBloc', homeBloc));
+  }
 }

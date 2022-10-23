@@ -9,9 +9,10 @@ class LightColors implements IColors {
     scaffoldBackgroundColor = CustomColors.white;
     tabBarColor = CustomColors.white;
     colorScheme = const ColorScheme.light().copyWith(
-        onPrimary: CustomColors.darkGrey,
-        onSecondary: CustomColors.darkGrey,
-        onSurface: CustomColors.darkGrey);
+      onPrimary: CustomColors.darkGrey,
+      onSecondary: CustomColors.darkGrey,
+      onSurface: CustomColors.darkGrey,
+    );
     buttonColor = CustomColors.caramel;
     brightness = Brightness.light;
     iconTheme = IconThemeData(color: CustomColors.caramel);

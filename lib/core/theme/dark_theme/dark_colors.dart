@@ -9,9 +9,10 @@ class DarkColors implements IColors {
     scaffoldBackgroundColor = CustomColors.black;
     tabBarColor = CustomColors.darkGrey;
     colorScheme = const ColorScheme.dark().copyWith(
-        onPrimary: CustomColors.darkGrey,
-        onSecondary: CustomColors.darkGrey,
-        onSurface: CustomColors.darkGrey);
+      onPrimary: CustomColors.darkGrey,
+      onSecondary: CustomColors.darkGrey,
+      onSurface: CustomColors.darkGrey,
+    );
     buttonColor = CustomColors.caramel;
     brightness = Brightness.dark;
     iconTheme = IconThemeData(color: CustomColors.caramel);

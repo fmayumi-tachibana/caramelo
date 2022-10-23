@@ -1,8 +1,9 @@
-import 'package:caramelo/view/home/support/home_shared_preferences_support.dart';
 import 'package:caramelo/core/services/local_storage_service.dart';
+import 'package:caramelo/view/home/support/home_shared_preferences_support.dart';
+import 'package:flutter/material.dart';
 
 class HomeKey {
-  static String isDarkTheme = 'is_dark_theme_key';
+  static String appTheme = 'theme_key';
 }
 
 class HomeSharedPreferencesService
@@ -10,10 +11,21 @@ class HomeSharedPreferencesService
     implements HomeSharedPreferencesSupport {
 
   @override
-  Future<bool> get isDarkTheme =>
-      LocalStorageService.load(key: HomeKey.isDarkTheme, defaultValue: false);
+  Future<ThemeMode> get theme async {
+    String theme = await LocalStorageService.load(key: HomeKey.appTheme, defaultValue: ThemeMode.light.toString());
+    if (theme == 'light') {
+      return ThemeMode.light;
+    }
+
+    if (theme == 'dark') {
+      return ThemeMode.dark;
+    }
+
+    return ThemeMode.light;
+  }
 
   @override
-  Future<void> setIsDarkTheme (bool isDarkTheme) async =>
-      LocalStorageService.save(value: isDarkTheme, key: HomeKey.isDarkTheme);
+  Future<void> setTheme (ThemeMode theme) async {
+    await LocalStorageService.save(value: theme.toString(), key: HomeKey.appTheme);
+  }
 }
