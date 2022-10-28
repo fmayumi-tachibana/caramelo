@@ -2,13 +2,29 @@ import 'package:caramelo/core/theme/config.dart';
 import 'package:caramelo/core/theme/dark_theme/dark_theme.dart';
 import 'package:caramelo/core/theme/light_theme/light_theme.dart';
 import 'package:caramelo/core/theme/mechanisms/theme_manager.dart';
+import 'package:caramelo/firebase_options.dart';
 import 'package:caramelo/view/home/scenes/home_view.dart';
+import 'package:caramelo/view/login/login_view.dart';
 import 'package:caramelo/view/vaccination/vaccination_record/scene/vaccination_record_view.dart';
+import 'package:caramelo/view/vaccination/vaccination_resume/vaccination_resume_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:sizer/sizer.dart';
 
-void main() => runApp(ModularApp(module: AppModule(), child: const CarameloApp()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  runApp(
+  ModularApp(
+    module: AppModule(),
+    child: const CarameloApp(),
+  ),
+);
+}
 
 class AppModule extends Module {
   @override
@@ -16,8 +32,18 @@ class AppModule extends Module {
 
   @override
   List<ModularRoute> get routes => [
-    ChildRoute('/', child: (context, args) => const HomeView(), transition: TransitionType.defaultTransition),
-    ChildRoute('/vaccinationRecord', child: (context, args) => const VaccinationRecordView(), transition: TransitionType.defaultTransition),
+    ChildRoute('/', child: (context, args)
+      => const AuthGate(), transition: TransitionType.defaultTransition,
+    ),
+    ChildRoute('/home', child: (context, args)
+      => const HomeView(), transition: TransitionType.defaultTransition,
+    ),
+    ChildRoute('/vaccinationRecord', child: (context, args)
+      => const VaccinationRecordView(), transition: TransitionType.defaultTransition,
+    ),
+    ChildRoute('/vaccinationResume', child: (context, args)
+      => const VaccinationResumeView(), transition: TransitionType.defaultTransition,
+    ),
     ///Dynamic routes: consists on having a dynamic route segment, can be retrieved as a parameter:
     //ChildRoute('/second/:name', child: (context, args) => SecondPage(name: args.params['name'])),
     ///Modular.to.navigate('/second/jacob');

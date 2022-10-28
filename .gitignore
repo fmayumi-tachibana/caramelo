@@ -22,3 +22,6 @@ lib/generated_plugin_registrant.dart
 *.js.map
 *.g.dart
 *.gr.dart
+*.json
+key_config.dart
+*.plist
