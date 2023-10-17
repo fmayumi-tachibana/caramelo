@@ -1,4 +1,4 @@
-# caramelo
+# caramelo discontinued
 
 App de saúde animal
 
